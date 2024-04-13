@@ -1,0 +1,35 @@
+movies = {
+    "Interstellar": {"genre": "Sci-Fi", "rating": 4.8},
+    "Inception": {"genre": "Sci-Fi", "rating": 4.7},
+    "The Matrix": {"genre": "Sci-Fi", "rating": 4.6},
+    "The Shawshank Redemption": {"genre": "Drama", "rating": 4.9},
+    "The Godfather": {"genre": "Drama", "rating": 4.8},
+    "Pulp Fiction": {"genre": "Drama", "rating": 4.7},
+    "Forrest Gump": {"genre": "Drama", "rating": 4.6},
+    "The Dark Knight": {"genre": "Action", "rating": 4.9},
+    "Gladiator": {"genre": "Action", "rating": 4.7},
+    "The Avengers": {"genre": "Action", "rating": 4.6}
+}
+
+# Function to recommend movies based on user preferences
+def recommend_movies(preferences):
+    recommended_movies = []
+    for movie, attributes in movies.items():
+        if attributes["genre"] in preferences and attributes["rating"] >= 4.7:
+            recommended_movies.append(movie)
+    return recommended_movies
+
+# Sample user preferences
+user_preferences = ["Sci-Fi", "Action"]
+
+# Get recommended movies for the user
+recommended_movies = recommend_movies(user_preferences)
+
+# Print recommended movies
+if recommended_movies:
+    print("Recommended movies based on your preferences:")
+    for movie in recommended_movies:
+        print("-", movie)
+else:
+    print("No movies found based on your preferences.")
+
